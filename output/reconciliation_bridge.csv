@@ -1,0 +1,7 @@
+Step,Description,Result,Reason
+0,Naive count of communication_log,30,Every row represents a raw send attempt
+1,Apply campaign eligibility,26,Campaign 9004 is approval_awaiting and its 4 rows are excluded
+2,Reconcile retry family 9001 → 9002 → 9003,10,13 attempts represent 10 distinct customers within the retry chain
+3,Reconcile retry family 9201 → 9202,5,6 attempts represent 5 distinct customers within the retry chain
+4,Preserve standalone campaign 9101,7,Repeated C20 sends are separate legitimate events
+Final,Finance target_base,22,10 + 7 + 5 = 22
